@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload=" init()">
+
+    <section class="main">
+        <div class="container">
+            <div class="control-container ">
+                <label for="page-Text-color">Text color:</label>
+                <input type="color" id="page-Text-color" name="pageTextColor" onchange="onTextColorChange()" />
+                <label for="page-Text-color">Background color:</label>
+                <input type="color" id="page-background-color" name="pageBackgroundColor" onchange="onBgcChange()"  />
+                <select id="shape" name="shape" onchange="onChangeShape(this)">
+                    <option value="circle">circle</option>
+                    <option value="square">Square</option>
+                    <option value="rectangle">Rectangle</option>
+                    <option value="line">Line</option>
+                </select>
+                <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://72350ceed9f3.ngrok.io " class="fb-xfbml-parse-ignore">שיתוף</a></div>
+                <button onclick="clearCanvas()" class="btn btn-save">clear</button>
+                <button onclick="saveAndRestoreExample()" class="btn btn-clear">save</button>
+            </div>
+        </div>
+        <div class="canvas-container ">
+            <canvas id="my-canvas" width="500" height="500" onclick="draw(event)">
+            </canvas>
+        </div>
+    </section>
+    <script src="js/lib/hammer.min.js"></script>
+    <script src="js/util/util.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
